@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 const token = '7124125013:AAEPqBpQBRaq4rRekeE3Vcucaxu28DvC3dQ';
-const webAppUrl = 'https://steamcommunity.com/market/';
+const webAppUrl = 'https://silver-macaron-d5de91.netlify.app/';
 const bot = new TelegramBot(token, {polling: true});
 
 bot.on('message', async (msg) => {
@@ -12,7 +12,7 @@ bot.on('message', async (msg) => {
         await bot.sendMessage(chatId,'Знизу зявиться кнопка, заповніть форму', {
             reply_markup: {
                 keyboard: [
-                    [{text: 'Заповніть форму', web_app: {url: webAppUrl}}]
+                    [{text: 'Заповніть форму', web_app: {url: webAppUrl + '/form'}}]
                 ]
             }
         })
